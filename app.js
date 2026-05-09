@@ -1,1 +1,1 @@
-import { getContatos } from "./contatos.js"
+import "./contatos.js";
