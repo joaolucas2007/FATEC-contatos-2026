@@ -1,8 +1,8 @@
 const BASE_URL = "https://bakcend-fecaf-render.onrender.com/contatos";
 
-// =========================
-// PEGAR CONTATOS
-// =========================
+
+
+
 async function getContatos() {
   try {
     const response = await fetch(BASE_URL);
@@ -19,9 +19,9 @@ async function getContatos() {
   }
 }
 
-// =========================
-// CADASTRAR CONTATO
-// =========================
+
+
+
 export function registrarContato() {
 
   const form = document.getElementById("form-contato");
@@ -70,9 +70,7 @@ export function registrarContato() {
   });
 }
 
-// =========================
-// EXIBIR CONTATOS
-// =========================
+
 export async function exibirContatos() {
 
   const contatos = await getContatos();
@@ -142,9 +140,9 @@ export async function exibirContatos() {
     template.innerHTML += cardContato;
   });
 }
-// =========================
-// DELETAR CONTATO
-// =========================
+
+
+
 window.deletarContato = async function(id) {
 
   const confirmar = confirm(
@@ -175,9 +173,7 @@ window.deletarContato = async function(id) {
   }
 };
 
-// =========================
-// EDITAR CONTATO
-// =========================
+
 window.editarContato = async function(id) {
 
   const contatos = await getContatos();
@@ -254,3 +250,24 @@ window.editarContato = async function(id) {
     }
   };
 };
+
+let fotoBase64 = ""
+const previewInput = document.getElementById("preview-input")
+const previewImage = document.getElementById("preview-image")
+
+function previewImagem({ target }) {
+    const arquivo = target.files[0]
+    if (!arquivo) return
+    previewImage.src = URL.createObjectURL(arquivo)
+    converterBase64(arquivo)
+}
+
+function converterBase64(arquivo) {
+    const reader = new FileReader()
+    reader.onload = function () {
+        fotoBase64 = reader.result
+    }
+    reader.readAsDataURL(arquivo)
+}
+
+previewInput.addEventListener("change", previewImagem)

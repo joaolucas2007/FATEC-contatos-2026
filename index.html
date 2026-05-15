@@ -18,6 +18,19 @@
       <form id="form-contato">
         <input type="hidden" id="input-id" />
         
+
+        <div class="preview-container">
+          <input type="file" id="preview-input" accept="image/*">
+          <label for="preview-input" class="preview-label">
+            <img src="./image/iconeupload.png" alt="upload" class="preview-image" id="preview-image" >
+
+          </label>
+
+
+        </div>
+
+
+
         <div class="field">
           <label for="input-nome">Nome</label>
           <input type="text" id="input-nome" placeholder="Nome completo" required />
@@ -33,11 +46,7 @@
           <input type="email" id="input-email" placeholder="exemplo@email.com" />
         </div>
 
-        <div class="field">
-          <label for="input-foto">URL da Foto</label>
-          <input type="url" id="input-foto" placeholder="https://..." />
-        </div>
-
+      
         <div class="field">
           <label for="input-endereco">Endereço</label>
           <input type="text" id="input-endereco" placeholder="Rua, número..." />
