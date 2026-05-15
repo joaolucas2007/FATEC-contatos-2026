@@ -1,87 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CRUD Contatos FATEC</title>
-  <link rel="stylesheet" href="style.css" />
- <script type="module" src="./js/app.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Contatos</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="./js/app.js"></script>
 </head>
+
 <body>
+
   <header>
-    <h1>📒 Contatos FATEC</h1>
+    <h1>Contatos</h1>
   </header>
 
   <main>
-    <section class="form-panel">
+
+    <section class="form-container">
+
       <h2 id="form-title">Novo Contato</h2>
+
       <form id="form-contato">
-        <input type="hidden" id="input-id" />
-        
 
-        <div class="preview-container">
+        <input type="hidden" id="input-id">
+
+        <div class="upload">
           <input type="file" id="preview-input" accept="image/*">
-          <label for="preview-input" class="preview-label">
-            <img src="./image/iconeupload.png" alt="upload" class="preview-image" id="preview-image" >
 
+          <label for="preview-input">
+            <img
+              src="./image/iconeupload.png"
+              alt="Imagem"
+              id="preview-image"
+            >
           </label>
-
-
         </div>
 
+        <input
+          type="text"
+          id="input-nome"
+          placeholder="Nome"
+          required
+        >
 
+        <input
+          type="text"
+          id="input-celular"
+          placeholder="Celular"
+        >
 
-        <div class="field">
-          <label for="input-nome">Nome</label>
-          <input type="text" id="input-nome" placeholder="Nome completo" required />
+        <input
+          type="email"
+          id="input-email"
+          placeholder="E-mail"
+        >
+
+        <input
+          type="text"
+          id="input-endereco"
+          placeholder="Endereço"
+        >
+
+        <input
+          type="text"
+          id="input-cidade"
+          placeholder="Cidade"
+        >
+
+        <div class="buttons">
+          <button type="submit" id="btn-submit">
+            Salvar
+          </button>
+
+          <button
+            type="button"
+            id="btn-cancelar"
+            style="display:none"
+          >
+            Cancelar
+          </button>
         </div>
 
-        <div class="field">
-          <label for="input-celular">Celular</label>
-          <input type="text" id="input-celular" placeholder="(00) 00000-0000" />
-        </div>
-
-        <div class="field">
-          <label for="input-email">E-mail</label>
-          <input type="email" id="input-email" placeholder="exemplo@email.com" />
-        </div>
-
-      
-        <div class="field">
-          <label for="input-endereco">Endereço</label>
-          <input type="text" id="input-endereco" placeholder="Rua, número..." />
-        </div>
-
-        <div class="field">
-          <label for="input-cidade">Cidade</label>
-          <input type="text" id="input-cidade" placeholder="Sua cidade" />
-        </div>
-
-        <div class="form-actions">
-          <button type="submit" id="btn-submit" class="btn btn--primary">Salvar</button>
-          <button type="button" id="btn-cancelar" class="btn btn--ghost" style="display:none">Cancelar</button>
-        </div>
       </form>
     </section>
 
-    <section class="list-panel">
-      <div class="list-header">
-        <h2>Todos os Contatos</h2>
+    <section class="list-container">
+
+      <div class="top">
+        <h2>Contatos</h2>
         <span id="contador">0 contatos</span>
       </div>
 
-      <input type="text" id="search-input" placeholder="Buscar contato..." />
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Buscar contato..."
+      >
 
-   <div id="contacts-list">
-  <div id="cards"></div>
+      <div id="contacts-list">
 
-  <div id="empty-state">
-    <h3>Nenhum contato encontrado</h3>
-  </div>
-</div>
+        <div id="cards"></div>
+
+        <div id="empty-state">
+          <h3>Nenhum contato encontrado</h3>
+        </div>
+
+      </div>
+
     </section>
-  </main>
 
+  </main>
 
 </body>
 </html>
